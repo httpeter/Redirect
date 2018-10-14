@@ -1,0 +1,28 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:p="http://primefaces.org/ui">
+
+    <h:head>
+
+        <ui:include src="composition/analytics.xhtml"/>
+
+        <!--We need to call the indexcontroller somewhere...-->
+        <title>#{indexController.redirect()}</title>
+
+    </h:head>
+
+    <h:body>     
+        
+        <ui:repeat value="#{indexController.mappings}" var="m">
+            <p:commandButton value="#{m.fromURL} to #{m.fromURL}#{m.toURL}. Current URL: #{indexController.url}" style="width: 300px;"/>
+            <br/>
+        </ui:repeat>
+
+    </h:body>
+
+</html>
+
