@@ -7,7 +7,7 @@
       xmlns:p="http://primefaces.org/ui">
 
     <h:head>
-
+        
         <ui:include src="composition/analytics.xhtml"/>
 
         <!--We need to call the indexcontroller somewhere...-->
@@ -16,8 +16,8 @@
     </h:head>
 
     <h:body>     
-        
-        <ui:repeat value="#{indexController.mappings}" var="m">
+
+        <ui:repeat value="#{indexController.mappings}" var="m" rendered="#{indexController.showMapping}">
             <p:commandButton value="#{m.fromURL} to #{m.fromURL}#{m.toURL}. Current URL: #{indexController.url}" style="width: 300px;"/>
             <br/>
         </ui:repeat>
